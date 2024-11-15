@@ -8,10 +8,3 @@ setImmediate(async () => {
         console.log(error)
     })
 });
-
-
-RegisterCommand('tesfs', async (source: number, args: string[], raw: string) => {
-    const result = await global.exports['mongoDB'].findAndReturnSpecificFields("test", { test: "test" }, ['test'])
-    console.log(result)
-
-}, false)
