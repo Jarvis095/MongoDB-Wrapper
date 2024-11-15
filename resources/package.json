@@ -1,0 +1,32 @@
+{
+  "name": "DB-Wrapper",
+  "version": "1.0.0",
+  "description": "A FiveM MongoDB Wrapper Made By Morvix",
+  "main": "index.js",
+  "scripts": {
+    "-----BUILD-----": "",
+    "build": "concurrently \"yarn:build:*\"",
+    "build:server": "node --es-module-specifier-resolution=node scripts/server",
+    "-----DEV-----": "",
+    "dev": "concurrently \"yarn:dev:server\" \"yarn:tsc\" -c \"green.bold,cyan.bold\"",
+    "dev:server": "node --es-module-specifier-resolution=node scripts/server -dev",
+    "-----TSC-----": "",
+    "tsc": "concurrently \"yarn:tsc:*\" -c \"green.bold,cyan.bold\"",
+    "tsc:server": "cd game/src/server && npx tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@citizenfx/server": "latest",
+    "@types/node": "latest",
+    "concurrently": "latest",
+    "esbuild": "latest",
+    "mongodb": "^6.10.0",
+    "typescript": "latest"
+  },
+  "type": "module",
+  "dependencies": {
+    "performance-now": "^2.1.0"
+  }
+}
